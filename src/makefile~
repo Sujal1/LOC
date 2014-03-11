@@ -1,0 +1,13 @@
+all: generate
+
+generate: LOC_test.o main.o
+	g++ ../lib/LOC_test.o ../lib/main.o -o exe_file
+
+LOC_test.o: LOC_test.cpp
+	g++ -c LOC_test.cpp -o ../lib/LOC_test.o
+
+main.o:	main.cpp
+	g++ -c main.cpp -o ../lib/main.o
+
+install: 
+	mv exe_file ../bin/

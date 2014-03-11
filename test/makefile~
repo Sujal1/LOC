@@ -1,0 +1,11 @@
+all: generate
+
+generate: test.o
+	g++ -o test_file ../lib/test.o ../lib/LOC_test.o 
+
+test.o: 
+	g++ -c main_test.cpp -I ../src/ -o ../lib/test.o
+
+install:
+	mv test_file ../bin/
+
